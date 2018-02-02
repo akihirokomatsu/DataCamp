@@ -58,3 +58,15 @@ _ = plt.xlabel('petal length (cm)')
 _ = plt.ylabel('ECDF')
 plt.show()
 
+# compute percentiles
+percentiles = np.array([2.5, 25, 50, 75, 97.5]) # define which percentiles I want
+ptiles_vers = np.percentile(versicolor_petal_length, percentiles) #calculate percentiles of data
+print (ptiles_vers)
+
+#overlay the percentiles on the ecdf graph above
+_ = plt.plot(x_vers, y_vers, '.') # plot ecdf
+plt.margins(0.02) # set margins
+_ = plt.xlabel('petal length (cm)') # label axes
+_ = plt.ylabel('ECDF')
+_ = plt.plot(ptiles_vers, percentiles/100, marker='D', color='red', linestyle='none') # plot percentiles
+plt.show()
