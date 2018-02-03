@@ -70,3 +70,13 @@ _ = plt.xlabel('petal length (cm)') # label axes
 _ = plt.ylabel('ECDF')
 _ = plt.plot(ptiles_vers, percentiles/100, marker='D', color='red', linestyle='none') # plot percentiles
 plt.show()
+
+# box plot
+# _ = sns.boxplot(x='x data', y='y data', data=df)
+
+#scatter plot
+# - = plt.plot(total_votes/100, dem_share, markers='.', linestyle='none')
+
+
+
+
