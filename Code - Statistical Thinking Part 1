@@ -77,6 +77,9 @@ plt.show()
 #scatter plot
 # - = plt.plot(total_votes/100, dem_share, markers='.', linestyle='none')
 
-
+# pearson correlation coefficient
+def pearson_r(x, y):
+    corr_matrix = np.corrcoef(x,y)
+    return corr_matrix[0,1]
 
 
