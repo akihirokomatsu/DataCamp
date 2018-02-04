@@ -82,4 +82,7 @@ def pearson_r(x, y):
     corr_matrix = np.corrcoef(x,y)
     return corr_matrix[0,1]
 
-
+# pseudo random number between 0,1 generation using seeds
+np.random.seed(10)
+random_numbers = np.random.random(size=4)
+print (random_numbers)
