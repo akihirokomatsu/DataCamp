@@ -9,3 +9,5 @@ Important things I've learned ~
  - covariance, a measure of how two quantities vary together 
  - pearson correlation, unitless measure of how two quantities vary together, (cov)/[(std x)(std y)], between -1 and 1
  - probabilistic thinking and statistical inference, such as using probability to estimate the mean
+ - hacker statistics - simulation of repeated measurements to compute probabilities 
+ - Bernoulli trial - an experiment that has two outcomes: true or false, such as a coin flip
