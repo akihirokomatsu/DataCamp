@@ -86,3 +86,14 @@ def pearson_r(x, y):
 np.random.seed(10)
 random_numbers = np.random.random(size=4)
 print (random_numbers)
+
+# create a function that performs Bernoulli trials, based on n observations and p success rate, returns success rate
+def bernoulli_trials_func(n,p):
+    n_successes = 0
+    for i in range(n):
+        random_num = np.random.random()
+        if random_num > p:
+            n_successes += 1
+    return (n_successes/n)
+bernoulli_trials_func(100, .5)
+
