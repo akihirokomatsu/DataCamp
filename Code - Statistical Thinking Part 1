@@ -19,7 +19,7 @@ virginica_petal_length = [ 6.,   5.1,  5.9,  5.6,  5.8,  6.6,  4.5,  6.3,  5.8, 
   5.2,  5.,   5.2,  5.4,  5.1]
   
 
-"""creating a ECDF function"""
+"""creating an ECDF function"""
 def ecdf(data):
         """Compute ECDF for a one-dimensional array of measurements."""
         # Number of data points: n
@@ -87,13 +87,37 @@ np.random.seed(10)
 random_numbers = np.random.random(size=4)
 print (random_numbers)
 
-# create a function that performs Bernoulli trials, based on n observations and p success rate, returns success rate
+"""create a function that performs Bernoulli trials"""
+#based on n observations and p success rate, returns success rate
 def bernoulli_trials_func(n,p):
     n_successes = 0
     for i in range(n):
         random_num = np.random.random()
         if random_num > p:
             n_successes += 1
-    return (n_successes/n)
+    return n_successes
+
 bernoulli_trials_func(100, .5)
 
+# using bernoulli_trials function to simulate the number of defaults a bank would face
+# number of loans: 100
+# default rate of 5%
+# number of trials: 1000
+np.random.seed(42)
+n_defaults = np.empty(1000)
+for i in range(1000):
+    n_defaults[i] = bernoulli_trials_func(100, 0.05)
+_ = plt.hist(n_defaults, normed=True)
+_ = plt.xlabel('number of defaults out of 100 loans')
+_ = plt.ylabel('probability')
+plt.show()
+
+# consider: if a bank faces 10 or more defaults, then it will lose money. what is the probability of this occuring?
+# ecdf:
+x,y = ecdf(n_defaults)
+_ = plt.plot(x,y, marker='.', linestyle='none')
+_ = plt.xlabel('number of defaults')
+_ = plt.ylabel('ECDF')
+plt.show()
+n_lose_money = np.sum(n_defaults >= 10)
+print('Probability of losing money =', n_lose_money / len(n_defaults))
