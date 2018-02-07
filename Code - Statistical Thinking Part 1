@@ -146,3 +146,25 @@ _ = plt.xlabel('number of defaults')
 _ = plt.ylabel('probability')
 # Show the plot
 plt.show()
+
+"""no-hitters poisson distribution"""
+# The years 1990 and 2015 had the most no-hitters ever: 7
+# The average # of no-hitters per season is (251/115), approx 2.183
+# What is the probability of having 7 or more no-hitters in a season?
+# Draw 10,000 samples out of Poisson distribution: n_nohitters
+
+n_nohitters = np.random.poisson(lam=251/115, size=10000)
+
+# Compute number of samples that are seven or greater: n_large
+n_large = np.sum(n_nohitters>=7)
+
+# Compute probability of getting seven or more: p_large
+p_large= n_large/10000
+
+# Print the result
+print('Probability of seven or more no-hitters:', p_large)
+
+# compute number of samples that are two or greater: n_avg
+n_avg = np.sum(n_nohitters >=2)
+p_avg = n_avg/10000
+print ('Probability of two or more no-hitters:', p_avg)
