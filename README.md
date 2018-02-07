@@ -11,3 +11,5 @@ Important things I've learned ~
  - probabilistic thinking and statistical inference, such as using probability to estimate the mean
  - hacker statistics - simulation of repeated measurements to compute probabilities 
  - Bernoulli trial - an experiment that has two outcomes: true or false, such as a coin flip
+ - Poisson process - timing of events are independent of when the previous event happened
+ - Poisson distribution - number of events (r) in a given time interval with an average rate of λ arrivals per interval  
