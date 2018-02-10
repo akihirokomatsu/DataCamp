@@ -189,3 +189,41 @@ print('Probability of seven or more no-hitters:', p_large)
 n_avg = np.sum(n_nohitters >=2)
 p_avg = n_avg/10000
 print ('Probability of two or more no-hitters:', p_avg)
+
+
+"""shows how normal distribution may vary given the same mean but different std deviations"""
+# Draw 100000 samples from Normal distribution with stds of interest: samples_std1, samples_std3, samples_std10
+samples_std1 = np.random.normal(loc=20, scale=1, size=100000)
+samples_std3 = np.random.normal(loc=20, scale=3, size=100000)
+samples_std10 = np.random.normal(loc=20, scale=10, size=100000)
+
+# Make histograms
+plt.hist(samples_std1, bins=100, normed=True, histtype='step')
+plt.hist(samples_std3, bins=100, normed=True, histtype='step')
+plt.hist(samples_std10, bins=100, normed=True, histtype='step')
+
+# Make a legend, set limits and show plot
+_ = plt.legend(('std = 1', 'std = 3', 'std = 10'))
+plt.ylim(-0.01, 0.42)
+plt.show()
+
+
+"""plotting the CDFs of the normally distributed random samples above"""
+# Generate CDFs
+x_std1, y_std1 = ecdf(samples_std1)
+x_std3, y_std3 = ecdf(samples_std3)
+x_std10, y_std10 = ecdf(samples_std10)
+
+# Plot CDFs
+plt.plot(x_std1, y_std1, marker='.', linestyle='none')
+plt.plot(x_std3, y_std3, marker='.', linestyle='none')
+plt.plot(x_std10, y_std10, marker='.', linestyle='none')
+
+# Make 2% margin
+plt.margins(0.02)
+
+# Make a legend and show the plot
+_ = plt.legend(('std = 1', 'std = 3', 'std = 10'), loc='lower right')
+_ = plt.xlabel('value')
+_ = plt.ylabel('CDF')
+plt.show()
