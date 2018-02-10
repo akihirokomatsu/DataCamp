@@ -13,3 +13,4 @@ Important things I've learned ~
  - Bernoulli trial - an experiment that has two outcomes: true or false, such as a coin flip
  - Poisson process - timing of events are independent of when the previous event happened
  - Poisson distribution - number of events (r) in a given time interval with an average rate of λ arrivals per interval  
+ - Normal/Gaussian distribution - the effect of std dev on the PDF and CDF, warnings of when data looks normally distributed but when its not
