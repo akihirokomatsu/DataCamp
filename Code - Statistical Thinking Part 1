@@ -248,3 +248,12 @@ _ = plt.xlabel('Belmont winning time (sec.)')
 _ = plt.ylabel('CDF')
 plt.show()
 
+"""What are the chances of a horse matching or beating Secretariat's record?"""
+# Take a million samples out of the Normal distribution: samples
+samples = np.random.normal(loc=mu, scale=sigma, size=1000000)
+
+# Compute the fraction that are faster than 144 seconds: prob
+prob = sum(samples<=144)/len(samples)
+
+# Print the result
+print('Probability of besting Secretariat:', prob)
