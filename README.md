@@ -15,3 +15,6 @@ Important things I've learned ~
  - Poisson distribution - number of events (r) in a given time interval with an average rate of λ arrivals per interval  
  - Normal/Gaussian distribution - the effect of std dev on the PDF and CDF, warnings of when data looks normally distributed but when its not
  - Exponential distribution - the timing between incidents of a Poisson distribution is exponentially distributed 
+
+# Statistical Thinking in Python (Part 2)
+ - Optimal parameters - parameter values that bring the model in closest agreement with the data, but the model should be right, or else the optimal parameters are not useful
