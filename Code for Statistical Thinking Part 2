@@ -1,3 +1,16 @@
+import csv
+import re
+import pandas as pd
+import os
+import datetime as dt
+import io
+import numpy as np
+import matplotlib.pyplot as plt
+from sklearn import datasets
+import seaborn as sns
+sns.set()
+from bs4 import BeautifulSoup
+
 """how often do we get no-hitters? plotting the PDF"""
 # Seed random number generator
 np.random.seed(42)
