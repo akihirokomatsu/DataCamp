@@ -19,3 +19,4 @@
  - Optimal parameters - parameter values that bring the model in closest agreement with the data, but the model should be right, or else the optimal parameters are not useful
  - linear regression by least squares, a line that produces the minimal sum of the squares of the residuals
  - linear regression where degree = 1: slope, intercept = np.polyfit(x, y, degree of polynomial)
+ - Importance of exploratory data analysis: Anscombe's quartet shows that the blindly calcalating mean, regression line, etc. is dangerous
