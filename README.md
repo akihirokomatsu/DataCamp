@@ -24,5 +24,5 @@
  - bootstrap sample: a resampled array of the data
  - bootstrap replicate: statistic computed from a resampled array, ie mean
  - bootstrap confidence intervals: if we repeated measurements over and over again, p% of the observed values would be within the p% confidence interval
- - pairs bootstrap for linear regression: resample data in pairs, based on the x and y variables; beneficial in instances with two existing variables (ex: state county and democratic voting); then use resmapled pairs to calculate slope & intercept (each slope&intercept is a bootstrap replicate); repeat multiple times to compute condidence intervals from percentiles of boostrap replicates
+ - pairs bootstrap for linear regression: resample data in pairs, based on the x and y variables; beneficial in instances with two existing variables (ex: state county and democratic voting); then use resampled pairs to calculate slope & intercept (each slope&intercept is a bootstrap replicate); repeat multiple times to compute confidence intervals from percentiles of boostrap replicates
  
