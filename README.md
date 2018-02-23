@@ -25,4 +25,6 @@
  - bootstrap replicate: statistic computed from a resampled array, ie mean
  - bootstrap confidence intervals: if we repeated measurements over and over again, p% of the observed values would be within the p% confidence interval
  - pairs bootstrap for linear regression: resample data in pairs, based on the x and y variables; beneficial in instances with two existing variables (ex: state county and democratic voting); then use resampled pairs to calculate slope & intercept (each slope&intercept is a bootstrap replicate); repeat multiple times to compute confidence intervals from percentiles of boostrap replicates
+ - hypothesis testing: an assessment of how reasonable the observed data are assuming a hypothesis is true
+ - permutation: random reordering of entries in an array, especially useful where null hypothesis is assuming the two quantities are identically distributed
  
