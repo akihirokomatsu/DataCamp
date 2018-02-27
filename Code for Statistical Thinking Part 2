@@ -297,3 +297,67 @@ _ = plt.xlabel('monthly rainfall (mm)')
 _ = plt.ylabel('ECDF')
 plt.show()
 print ('observation: the permutation samples are the middle band, and the original datas ecdfs are separate. Signals that July & november ')
+
+
+def draw_perm_reps(data_1, data_2, func, size=1):
+    """Generate multiple permutation replicates."""
+
+    # Initialize array of replicates: perm_replicates
+    perm_replicates = np.empty(size)
+
+    for i in range(size):
+        # Generate permutation sample
+        perm_sample_1, perm_sample_2 = permutation_sample(data_1, data_2)
+
+        # Compute the test statistic
+        perm_replicates[i] = func(perm_sample_1, perm_sample_2)
+
+    return perm_replicates
+    
+#data: A is an adult frog, B is a juvenile frog. Their respective numbers are the measure of the impact of the force of their tongues
+frog_data = np.array([['A', 1.612], ['A', 0.605],['A', 0.327],['A', 0.946],['A', 0.541],['A', 1.539],['A', 0.529],['A', 0.628],
+       ['A', 1.453],['A', 0.297],['A', 0.703],['A', 0.269],['A', 0.751],['A', 0.245],['A', 1.182],['A', 0.515],
+       ['A', 0.435],['A', 0.383],['A', 0.457],['A', 0.73],['B', 0.172],['B', 0.142],['B', 0.037],['B', 0.453],
+       ['B', 0.355],['B', 0.022],['B', 0.502],['B', 0.273],['B', 0.72],['B', 0.582],['B', 0.198],['B', 0.198],
+       ['B', 0.597], ['B', 0.516],['B', 0.815],['B', 0.402],['B', 0.605],['B', 0.711],['B', 0.614],['B', 0.468]])
+df= pd.DataFrame(frog_data)
+df.columns = ['ID', 'impact_force']
+
+"""EDA of the frog_data using a swarm plot"""
+# Make bee swarm plot
+_ = sns.swarmplot(x=df['ID'], y=df['impact_force'], data=df)
+
+# Label axes
+_ = plt.xlabel('frog')
+_ = plt.ylabel('impact force (N)')
+
+# Show the plot
+plt.show()
+
+# frog data, forces of A and B
+force_a = [ 1.612,  0.605,  0.327,  0.946,  0.541,  1.539,  0.529,  0.628,  1.453,  0.297,
+  0.703,  0.269, 0.751,  0.245,  1.182,  0.515,  0.435,  0.383,  0.457,  0.73 ]
+force_b = [ 0.172,  0.142,  0.037,  0.453,  0.355,  0.022,  0.502,  0.273, 0.72 ,  0.582,  
+           0.198,  0.198,  0.597,  0.516,  0.815,  0.402, 0.605,  0.711,  0.614,  0.468]
+def diff_of_means(data_1, data_2):
+    """Difference in means of two arrays."""
+
+    # The difference of means of data_1, data_2: diff
+    diff = np.mean(data_1) - np.mean(data_2)
+
+    return diff
+
+# Compute difference of mean impact force from experiment: empirical_diff_means
+empirical_diff_means = diff_of_means(force_a, force_b)
+
+# Draw 10,000 permutation replicates: perm_replicates
+perm_replicates = draw_perm_reps(force_a, force_b,
+                                 diff_of_means, size=10000)
+
+# Compute p-value: p
+p = np.sum(perm_replicates >= empirical_diff_means) / len(perm_replicates)
+
+# Print the result
+print('p-value =', p)
+# low p value indicates that there is a low chance that the means of the two frogs are actually the same.
+# the data indicates that the means of Frog A and Frog B are statistically significant
