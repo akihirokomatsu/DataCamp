@@ -27,4 +27,7 @@
  - pairs bootstrap for linear regression: resample data in pairs, based on the x and y variables; beneficial in instances with two existing variables (ex: state county and democratic voting); then use resampled pairs to calculate slope & intercept (each slope&intercept is a bootstrap replicate); repeat multiple times to compute confidence intervals from percentiles of boostrap replicates
  - hypothesis testing: an assessment of how reasonable the observed data are assuming a hypothesis is true
  - permutation: random reordering of entries in an array, especially useful where null hypothesis is assuming the two quantities are identically distributed
- 
+ - test statistic: a single number that can be computed from observed data and from data you simulate under the null hypothesis, ex: mean
+ - p value: the probability of obtaining a value of your test statistic that is at least as extreme as what was observed, under the assumption the null hypothesis is true. It is NOT the probability that the null hypothesis is true
+ - Null hypothesis significance testing (NHST): statistically significant difference between two quantities is determined by the smallness of a p-value.
+ - statistical significant =/= practical significance
