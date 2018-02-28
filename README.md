@@ -31,3 +31,5 @@
  - p value: the probability of obtaining a value of your test statistic that is at least as extreme as what was observed, under the assumption the null hypothesis is true. It is NOT the probability that the null hypothesis is true
  - Null hypothesis significance testing (NHST): statistically significant difference between two quantities is determined by the smallness of a p-value.
  - statistical significant =/= practical significance
+ - bootstrap hypothesis testing: pipeline - 1) clearly state null hypothesis 2) define test statistic 3) generate many sets of simulated data assuming the null hypothesis is true 4) compute the test statistic for each simulated set 5) calculate p-value
+ - 
