@@ -361,3 +361,5 @@ p = np.sum(perm_replicates >= empirical_diff_means) / len(perm_replicates)
 print('p-value =', p)
 # low p value indicates that there is a low chance that the means of the two frogs are actually the same.
 # the data indicates that the means of Frog A and Frog B are statistically significant
+
+
