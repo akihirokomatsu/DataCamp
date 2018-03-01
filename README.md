@@ -32,4 +32,5 @@
  - Null hypothesis significance testing (NHST): statistically significant difference between two quantities is determined by the smallness of a p-value.
  - statistical significant =/= practical significance
  - bootstrap hypothesis testing for two sample test: pipeline - 1) clearly state null hypothesis 2) define test statistic 3) generate many sets of simulated data assuming the null hypothesis is true 4) compute the test statistic for each simulated set 5) calculate p-value
- - 
+ - A/B Testing: address the difference in the A and B cases using hypothesis testing; null hypothesis is that there is no difference between the causes on A and B, so the difference in effect on A and B are due to random chance
+ 
