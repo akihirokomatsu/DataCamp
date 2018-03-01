@@ -363,3 +363,28 @@ print('p-value =', p)
 # the data indicates that the means of Frog A and Frog B are statistically significant
 
 
+"""A/B testing"""
+# clickthrough_A, clickthrough_B: arrays of 0 and 1, 1 being click and 0 being no click
+def diff_fraction(data_A, data_B):
+    frac_A = np.sum(data_A)/len(data_A)
+    frac_B = np.sum(data_B)/len(data_B)
+    return frac_B - frac_A
+    
+ """did party affiliation make a difference in the vote of the civil rights act of 1964?"""
+# Construct arrays of data: dems, reps
+dems = np.array([True] * 153 + [False] * 91) # democrats: 153 yays, 91 nays
+reps = np.array([True] * 136 + [False] * 35) # republicans: 136 yays, 35 nays
+
+def frac_yay_dems(dems, reps):
+    """Compute fraction of Democrat yay votes."""
+    frac = np.sum(dems) / len(dems)
+    return frac
+
+# Acquire permutation samples: perm_replicates
+perm_replicates = draw_perm_reps(dems, reps, frac_yay_dems, 10000)
+
+# Compute and print p-value: p
+p = np.sum(perm_replicates <= 153/244) / len(perm_replicates)
+print('p-value =', p)
+
+# low p value indicates that party affiliation did have an impact on the voting
