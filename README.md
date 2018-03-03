@@ -34,4 +34,15 @@
 - bootstrap hypothesis testing for two sample test: pipeline - 1) clearly state null hypothesis 2) define test statistic 3) generate many sets of simulated data assuming the null hypothesis is true 4) compute the test statistic for each simulated set 5) calculate p-value
 - A/B Testing: address the difference in the A and B cases using hypothesis testing; null hypothesis is that the test statistic is impervious to the change
 - hypothesis test of correlation: null hypothesis is two variables are uncorrelated, Pearson coefficient is the test statistic, compute p value as fraction of replicates that have Pearson coefficient at least as large as observed
-- 
+
+# Supervised Learning with scikit-learn
+- machine learning: art and science of giving computers the ability to learn to make decisions from data without being explicitly programmed
+- supervised learning uses labeled data, unsupervised learning uses unlabeled data
+- unsupervised learning: uncovering hidden patterns from unlabeled data, ex: grouping customers into distinct categories (clustering)
+- reinforcement learning: software agents interact with an environment, lear how to optimize their behavior, given a system of rewards and punishments
+- supervised learning: predictor variables/features and a target variable
+- aim of supervised learning is to predict the target variable, given the predictor variables
+- classification: use if the target variable consists of categories (ie spam or not spam)
+- regression: use if the target variable is continuous (ie price of a house)
+- goal of supervised learning is often (1) automate time-consuming or expensive manual tasks (doctor's diagnosis), (2) make predictions about the future (ie will a customer click on an ad or not)
+
