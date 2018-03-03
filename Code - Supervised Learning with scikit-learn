@@ -1,1 +1,29 @@
+from sklearn import datasets
+import csv
+import re
+import pandas as pd
+import os
+import datetime as dt
+import io
+import numpy as np
+import matplotlib.pyplot as plt
+from sklearn import datasets
+import seaborn as sns
+sns.set()
+from bs4 import BeautifulSoup
+plt.style.use('ggplot')
 
+# import iris dataset from sklearn
+iris = datasets.load_iris()
+
+# print iris keys
+print (iris.keys())
+
+# set x, y
+x = iris.data
+y = iris.target
+
+# create df, scatter matrix df data
+df = pd.DataFrame(x, columns=iris.feature_names)
+_ = pd.plotting.scatter_matrix(df, c=y, figsize=[8,8], s=150, marker='D')
+plt.plot()
