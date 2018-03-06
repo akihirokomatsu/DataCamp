@@ -39,7 +39,7 @@
 - machine learning: art and science of giving computers the ability to learn to make decisions from data without being explicitly programmed
 - supervised learning uses labeled data, unsupervised learning uses unlabeled data
 - unsupervised learning: uncovering hidden patterns from unlabeled data, ex: grouping customers into distinct categories (clustering)
-- reinforcement learning: software agents interact with an environment, lear how to optimize their behavior, given a system of rewards and punishments
+- reinforcement learning: software agents interact with an environment, learn how to optimize their behavior, given a system of rewards and punishments
 - supervised learning: predictor variables/features and a target variable
 - aim of supervised learning is to predict the target variable, given the predictor variables
 - classification: use if the target variable consists of categories (ie spam or not spam)
