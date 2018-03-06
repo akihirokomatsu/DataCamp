@@ -27,3 +27,10 @@ y = iris.target
 df = pd.DataFrame(x, columns=iris.feature_names)
 _ = pd.plotting.scatter_matrix(df, c=y, figsize=[8,8], s=150, marker='D')
 plt.plot()
+
+from sklearn.neighbors import KNeighborsClassifier
+knn = KNeighborsClassifier(n_neighbors=6)
+knn.fit(iris['data'], iris['target'])
+KNeighborsClassifier(algorithm='auto', leaf_size=30, metric='minkowski', metric_params=None, n_jobs=1,
+                    n_neighbors=6, p=2, weights='uniform')
+iris['data'].shape
