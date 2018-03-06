@@ -45,4 +45,7 @@
 - classification: use if the target variable consists of categories (ie spam or not spam)
 - regression: use if the target variable is continuous (ie price of a house)
 - goal of supervised learning is often (1) automate time-consuming or expensive manual tasks (doctor's diagnosis), (2) make predictions about the future (ie will a customer click on an ad or not)
+- k-Nearest Neighbors: predict the label of a data point by looking at the 'k' closest labeled data points; k-NN can create decision boundaries, lines that separate a graph into regions where points within them are all labeled the same
+- training a model on the data = 'fitting' a model to the data, using .fit() method
+- to predict the labels of new data: .predict() method
 
