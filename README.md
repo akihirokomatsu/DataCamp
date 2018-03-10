@@ -48,4 +48,10 @@
 - k-Nearest Neighbors: predict the label of a data point by looking at the 'k' closest labeled data points; k-NN can create decision boundaries, lines that separate a graph into regions where points within them are all labeled the same
 - training a model on the data = 'fitting' a model to the data, using .fit() method
 - to predict the labels of new data: .predict() method
+- measuring model performance: fraction of correct predictions
+- the predictions on a test set is not indicative of ability to classify, so common practice is split data into training and test set
+- fit/train the classifier on the training set, make predictions on the test set, compare predictions with the known labels, using train_test_split() from sklearn.model_selection, KNeighborsClassifier(), knn.fit(), knn.predict(), knn.score()
+- model complexity: larger k = smoother decision boundary = less complex model; smaller k = more complex model = can lead to overfitting
+
+
 
