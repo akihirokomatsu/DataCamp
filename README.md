@@ -42,7 +42,7 @@
 - reinforcement learning: software agents interact with an environment, learn how to optimize their behavior, given a system of rewards and punishments
 - supervised learning: predictor variables/features and a target variable
 - aim of supervised learning is to predict the target variable, given the predictor variables
-- classification: use if the target variable consists of categories (ie spam or not spam)
+- classification: use if the target variable consists of categories (i.e. spam or not spam)
 - regression: use if the target variable is continuous (ie price of a house)
 - goal of supervised learning is often (1) automate time-consuming or expensive manual tasks (doctor's diagnosis), (2) make predictions about the future (ie will a customer click on an ad or not)
 - k-Nearest Neighbors: predict the label of a data point by looking at the 'k' closest labeled data points; k-NN can create decision boundaries, lines that separate a graph into regions where points within them are all labeled the same
